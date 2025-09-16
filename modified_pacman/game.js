@@ -6,7 +6,7 @@ const scoreEl = document.getElementById('score');
 const livesEl = document.getElementById('lives');
 const restartBtn = document.getElementById('restart');
 
-const CELL = 32; // size of one cell in px
+const CELL = 24; // size of one cell in px
 const COLS = Math.floor(canvas.width / CELL);
 const ROWS = Math.floor(canvas.height / CELL);
 
@@ -173,7 +173,7 @@ function draw() {
   // draw map: walls and pellets
   for (let r=0;r<ROWS;r++) for (let c=0;c<COLS;c++){
     const x = c*CELL, y = r*CELL;
-    if (map[r][c] === 1) { ctx.fillStyle='#0a4b7a'; ctx.fillRect(x+2,y+2,CELL-4,CELL-4); }
+    if (map[r][c] === 1) { ctx.fillStyle='#FCC6BB'; ctx.fillRect(x+2,y+2,CELL-4,CELL-4); }
     if (map[r][c] === 2) { ctx.fillStyle='#fff'; ctx.beginPath(); ctx.arc(x+CELL/2,y+CELL/2,3,0,Math.PI*2); ctx.fill(); }
     if (map[r][c] === 3) { ctx.fillStyle='#ffd24a'; ctx.beginPath(); ctx.arc(x+CELL/2,y+CELL/2,6,0,Math.PI*2); ctx.fill(); }
   }
