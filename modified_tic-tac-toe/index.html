@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Tic Tac Toc</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div id="startMenu" class="overlay">
+  <div class="overlay-card">
+    <h2>Select Game Mode</h2>
+    <button id="pvpBtn">2 Players</button>
+    <button id="cpuBtn">1 Player (vs Computer)</button>
+  </div>
+</div>
+  <main class="container">
+    <h1>Tic Tac Toc</h1>
+
+    <section class="scoreboard">
+      <div class="score"><span id="scoreX">0</span><small>×</small> X</div>
+      <div class="status" id="status">Turn: <span id="turn">X</span></div>
+      <div class="score"><span id="scoreO">0</span><small>○</small> O</div>
+    </section>
+
+    <section class="board" id="board" role="grid" aria-label="Tic Tac Toe board">
+      <button class="cell" data-index="0" aria-label="cell 1"></button>
+      <button class="cell" data-index="1" aria-label="cell 2"></button>
+      <button class="cell" data-index="2" aria-label="cell 3"></button>
+      <button class="cell" data-index="3" aria-label="cell 4"></button>
+      <button class="cell" data-index="4" aria-label="cell 5"></button>
+      <button class="cell" data-index="5" aria-label="cell 6"></button>
+      <button class="cell" data-index="6" aria-label="cell 7"></button>
+      <button class="cell" data-index="7" aria-label="cell 8"></button>
+      <button class="cell" data-index="8" aria-label="cell 9"></button>
+    </section>
+
+    <div class="controls">
+      <button id="restart">Restart Round</button>
+      <button id="resetScores">Reset Scores</button>
+    </div>
+
+    <div id="overlay" class="overlay hidden">
+      <div class="overlay-card">
+        <h2 id="overlayTitle">Result</h2>
+        <p id="overlayMessage"></p>
+        <button id="overlayBtn">Play Again</button>
+      </div>
+    </div>
+
+    <footer class="credits">Made with ❤️ — simple tic tac toe</footer>
+  </main>
+
+  <script src="game.js"></script>
+</body>
+</html>
