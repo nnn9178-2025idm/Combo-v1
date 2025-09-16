@@ -15,8 +15,7 @@ placeFood();
 function gameLoop() {
     moveSnake();
     if (checkCollision()) {
-        alert('Game Over! Your score: ' + score);
-        resetGame();
+        resetGame(); // just reset without alert
         return;
     }
     if (checkFood()) {
@@ -84,8 +83,7 @@ const startButton = document.getElementById('startButton');
 
 startButton.addEventListener('click', () => {
     if (!gameInterval) { // only start if not already running
-        gameInterval = setInterval(gameLoop, 100);
+        gameInterval = setInterval(gameLoop, 170);
         startButton.disabled = true; // disable button after starting
     }
 });
-
