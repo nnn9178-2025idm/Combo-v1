@@ -4,19 +4,34 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Simple Pac‑Man</title>
-  <link rel="stylesheet" href="style.css">
+ <style>
+    body {
+      margin: 0;
+      background: black;
+      color: white;
+      font-family: sans-serif;
+      text-align: center;
+    }
+    canvas {
+      display: block;
+      margin: 10px auto;
+      background: black;
+    }
+    button {
+      margin: 5px;
+      padding: 8px 16px;
+      font-size: 16px;
+    }
+  </style>
 </head>
 <body>
-  <div class="wrap">
-    <h1>Simple Pac‑Man</h1>
-    <canvas id="game" width="600" height="600"></canvas>
-    <div class="hud">
-      <div id="score">Score: 0</div>
-      <div id="lives">Lives: 3</div>
-      <button id="restart">Restart</button>
-    </div>
-    <p class="hint">Use arrow keys (or WASD) to move. Eat all pellets to win.</p>
-  </div>
+  <h1>Pac-Man</h1>
+  <div id="score">Score: 0</div>
+  <div id="lives">Lives: 3</div>
+  <button onclick="start()">Start Game</button>
+  <button id="restart">Restart</button>
+  <canvas id="game" width="672" height="480"></canvas>
+
   <script src="game.js"></script>
 </body>
 </html>

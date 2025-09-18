@@ -1,3 +1,4 @@
+let running = false;
 // Simple Pac‑Man clone (minimal, single file game logic).
 // Grid-based map, pellets, walls, simple ghost AI (random choice).
 const canvas = document.getElementById('game');
@@ -16,6 +17,8 @@ let score = 0;
 let lives = 3;
 let powered = 0; // frames of power state
 const POWER_LENGTH = 800; // frames
+
+
 
 // Simple map: bordered box with inner walls and pellets.
 function makeMap() {
@@ -230,14 +233,23 @@ function loop() {
 }
 
 function start() {
-  makeMap();
-  score = 0; lives = 3; powered = 0;
-  resetEntities();
-  // ensure pac position pixels are consistent
-  pac.px = pac.c*CELL; pac.py = pac.r*CELL;
-  // recalc pellets total after map created
-  // (makeMap already set pelletsTotal)
-}
+  if (running) return;  // 👈 don’t start a new loop if one is already running
 
-start();
-requestAnimationFrame(loop);
+  makeMap();
+  score = 0;
+  lives = 3;
+  powered = 0;
+  resetEntities();
+  pac.px = pac.c * CELL;
+  pac.py = pac.r * CELL;
+
+  frame = 0;
+  running = true;
+  requestAnimationFrame(loop);
+}
+// Build initial map and entities so board is visible before Start
+makeMap();
+resetEntities();
+draw();
+
+
